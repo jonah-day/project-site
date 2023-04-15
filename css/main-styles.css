@@ -96,3 +96,30 @@
     }
 
 }
+
+
+
+@font-face {
+    font-family: sloth-light;
+    src: url(fonts/sloth/sloth-light-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-regular;
+    src: url(fonts/sloth/sloth-regular-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-semibold;
+    src: url(fonts/sloth/sloth-semibold-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-bold;
+    src: url(fonts/sloth/sloth_bold-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-extrabold;
+    src: url(fonts/sloth/sloth_extrabold-webfont.woff2);
+}
