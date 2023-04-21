@@ -131,6 +131,7 @@ body {
     height: 46px;
     margin-right: 45px;
     margin-left: 12px;
+    border-radius: 3px;
     
     background: var(--transparent);
     box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color),
@@ -201,6 +202,7 @@ body {
     height: auto;
 
     margin-top: 140px;
+    margin-bottom: 70px;
 }
 
 .main-page-content {
@@ -224,12 +226,17 @@ body {
     box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
 }
 
+.content-outer:last-of-type {
+    margin-bottom: 0;
+}
+
 .content-inner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: auto;
     width: 100%;
+    border-radius: 3px;
 
     margin-top: 12px;
     margin-bottom: 12px;
@@ -320,6 +327,52 @@ body {
         color:brown;
     }
 
+    .main-header, .background-layer, .menu-container,
+    .animated-cover-layer, .animated-box-layer, 
+    .logo-container, .dropdown-container {
+        height: 80px;
+    }
+
+
+    .animated-box {
+        margin-left: 17px;
+    }
+
+    .main-page {
+        width: 80%;
+        background: var(--main-body-color);
+
+        border-radius: 3px;
+
+        box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+    }
+
+    .main-page-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 3px;
+        background: var(--main-body-color);
+
+        margin: 17px;
+        padding: 50px;
+
+        box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
+    }
+
+    .content-inner, .content-outer {
+        background: none;
+        margin: 0;
+        box-shadow: none;
+
+    }
+
+    .content {
+        width: 90%;
+    }
+
+
 }
 
 /* big desktop */
@@ -328,7 +381,7 @@ body {
     h1 {
         color:grey;
     }
-    
+
 }
 
 /* massive desktop */
