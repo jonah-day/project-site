@@ -7,6 +7,7 @@
 :root {
 
     --main-body-color: hsl(0, 0%, 94%);
+    --transparent: hsl(0, 0%, 0%, 0);
 
     --header-text-color: hsl(0, 0%, 0%);
     --body-text-color: hsl(0, 0%, 0%);
@@ -15,31 +16,32 @@
     --header-shadow-color: 	hsl(0, 0%, 41%);
 
     --header-height: 70px;
+    
+    --dropdown-box-width: 100%;
+    --dropdown-buffer-width: 70px;
+
+
+    --shadow-sway: 9px;
+    --main-shadow: 4px;
 
     font-size: 16px;
 }
 
 body {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
 
-    background: url(images/leaves-background-light.jpg);
-    
+    background: url(../images/leaves-background-light.jpg);
+
     font-family: "Helvatica", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.3;
 }
 
-
-.lower-header {
-    height: var(--header-height);
-    display: flex;
+.main-header {
     position: fixed;
-    display: flex;
-    align-items: center;
-    background: var(--main-body-color);
-    box-shadow: 0px 4px 10px var(--main-shadow-color);
+    height: var(--header-height);
     width: 100%;
 }
 
@@ -52,69 +54,23 @@ body {
     color: var(--header-text-color);
 }
 
-.logo-container {
-    width: 60%;
-}
-
-.logo {
-    margin: 0rem 0rem 0rem 1rem;
-
-    width: 100%;
-
-    font-family: "sloth-extrabold";
-    font-size: 40px;
-
-    text-shadow: 5px 10px 5px var(--header-shadow-color);
-}
-
-.dropdown-container {
+.background-layer {
     display: flex;
-    height: 100%;
-    width: 35%;
-
-
-    justify-content: center;
-    align-items: center;
-    
-    visibility: visible;
-}
-
-.drop-bar-1, .drop-bar-2, .drop-bar-3 {
-    width: 35px;
-    height: 4px;
-    margin: 4.5px;
-    background: var(--header-text-color);
-
-    box-shadow: 5px 10px 5px var(--header-shadow-color);
-    z-index: 15;
-
-    
-}
-
-.upper-header-outer {
     position: fixed;
-    height: var(--header-height);
-    display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    height: var(--header-height);
     background: var(--main-body-color);
-    z-index: 10;
-
-    padding: 12px;
-
-    visibility: hidden;
+    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
 }
 
-.upper-header-inner {
+.menu-container {
     display: flex;
-    height: 100%;
+    position: fixed;
     width: 100%;
+    height: var(--header-height);
     align-items: center;
-    flex-direction: row;
-    background: var(--main-body-color);
-    box-shadow: inset 2px 4px 10px var(--main-shadow-color);
-    z-index: 10;
+
+    z-index: 5;
 }
 
 .menu {
@@ -124,21 +80,192 @@ body {
     flex-direction: row;
     align-items: center;
     margin-top: 1%;
-    margin-left: 4%;
-    z-index: 10;
+    margin-left: 5.5%;
 }
 
 .menu > li {
     list-style: none;
     font-family: "sloth-extrabold";
     font-size: 15px;
-    text-shadow: 7px 14px 5px var(--header-shadow-color);
+    text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
+
+}
+
+.animated-cover-layer {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    height: var(--header-height);
+
+    z-index: 10;
+}
+
+.animated-cover {
+    width: 100%;
+    height: 100%;
+    margin-right: var(--dropdown-box-width);
+
+    background: var(--main-body-color);
+}
+
+
+.animated-buffer {
+    width: var(--dropdown-buffer-width);
+}
+
+.animated-box-layer {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    height: var(--header-height);
+
+    z-index: 15;
+}
+
+.animated-box {
+    width: var(--dropdown-box-width);
+    height: 46px;
+    margin-right: 45px;
+    margin-left: 12px;
+    
+    background: var(--transparent);
+    box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color),
+                0 0 0 10px var(--main-body-color);
+                
+}
+
+.logo-container {
+    position: fixed;
+    display: flex;
+    height: var(--header-height);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    z-index: 20;
+
+    visibility: hidden;
+}
+
+.logo {
+    margin: 0rem 0rem 0rem 1.3rem;
+
+    width: 100%;
+
+    font-family: "sloth-extrabold";
+    font-size: 40px;
+
+    text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
+}
+
+.main-dropdown {
+    margin-right: 50px;
+    width: 41.5px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.dropdown-container {
+    position: fixed;
+    display: flex;
+    height: var(--header-height);
+    width: 100%;
+
+    justify-content: right;
+    align-items: center;
+
+    z-index: 25;
+}
+
+.drop-bar-1, .drop-bar-2, .drop-bar-3 {
+    width: 31.5px;
+    height: 4px;
+    margin: 4px;
+    background: var(--header-text-color);
+
+    box-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
 
 }
 
 
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    margin-top: 140px;
+}
+
+.main-page-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+    margin-bottom: 70px;
+    background: var(--main-body-color);
+
+    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+}
+
+.content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
+
+    background: var(--main-body-color);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding: 30px;
+
+}
+
+.content > h1 {
+    margin-bottom: 20px;
+}
+
+.main-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
 
 
+    background: var(--main-body-color);
+    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+}
 
 
 /* small mobile */
@@ -184,10 +311,6 @@ body {
         color:maroon;
     }
 
-    .main-header {
-        height: 90px;
-    }
-
 }
 
 /* desktop */
@@ -195,10 +318,6 @@ body {
 
     h1 {
         color:brown;
-    }
-    
-    .main-header {
-        height: 90px;
     }
 
 }
@@ -210,10 +329,6 @@ body {
         color:grey;
     }
     
-    .main-header {
-        height: 90px;
-    }
-
 }
 
 /* massive desktop */
@@ -223,9 +338,6 @@ body {
         color:pink;
     }
 
-    .main-header {
-        height: 90px;
-    }
 
 }
 
