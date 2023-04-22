@@ -49,8 +49,8 @@
     --dropdown-buffer-width: 70px;
 
 
-    --shadow-sway: 9px;
-    --main-shadow: 4px;
+    --header-sway: 9px;
+    --main-sway: 4px;
 
     font-size: 16px;
 }
@@ -97,7 +97,7 @@ p {
     width: 100%;
     height: var(--header-height);
     background: var(--main-body-color);
-    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
 }
 
 .menu-container {
@@ -123,7 +123,7 @@ p {
     list-style: none;
     font-family: "sloth-extrabold";
     font-size: 15px;
-    text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
+    text-shadow: 5px var(--header-sway) 4.5px var(--header-shadow-color);
 
 }
 
@@ -174,7 +174,7 @@ p {
     border-radius: 3px;
     
     background: var(--transparent);
-    box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color),
+    box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color),
                 0 0 0 10px var(--main-body-color);
                 
 }
@@ -202,7 +202,7 @@ p {
     font-family: "sloth-extrabold";
     font-size: 40px;
 
-    text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
+    text-shadow: 5px var(--header-sway) 4.5px var(--header-shadow-color);
 }
 
 .dropdown-container {
@@ -233,7 +233,7 @@ p {
     margin: 4px;
     background: var(--header-text-color);
 
-    box-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
+    box-shadow: 5px var(--header-sway) 4px var(--header-shadow-color);
 
 }
 
@@ -266,10 +266,7 @@ p {
     width: 100%;
     
     margin-bottom:150px;
-    background: var(--main-body-color);
-
-    box-shadow: 2px 6px 10px var(--main-shadow-color),
-                2px -1px 10px var(--main-shadow-color);
+   
 }
 
 .content-outer:last-of-type {
@@ -283,13 +280,6 @@ p {
     height: auto;
     width: 100%;
 
-    border-radius: 3px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
-
-    
-    background: var(--main-body-color);
 }
 
 .content {
@@ -304,7 +294,9 @@ p {
     border-radius: 3px;
     margin-top: 18px;
     margin-bottom: 18px;
-    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color),
+                2px 2px 5px var(--main-shadow-color),
+                2px -2px 5px var(--main-shadow-color);
 
     
     background: var(--main-body-color);
@@ -325,7 +317,7 @@ p {
 
 
     background: var(--main-body-color);
-    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
 }
 
 
@@ -354,7 +346,7 @@ p {
 
         border-radius: 3px;
 
-        box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+        box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .main-page-inner {
@@ -369,7 +361,7 @@ p {
         padding: 50px;
         padding-top: 0px;
 
-        box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
+        box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .content-inner, .content-outer {
@@ -412,8 +404,8 @@ p {
     }
 
     .logo:hover {
-        text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color),
-                     5px var(--shadow-sway) 2px var(--header-shadow-color);
+        text-shadow: 5px var(--header-sway) 4px var(--header-shadow-color),
+                     5px var(--header-sway) 2px var(--header-shadow-color);
     }
 
     .menu-container {
@@ -430,8 +422,8 @@ p {
     }
 
     .menu > li:hover {
-        text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color),
-                     5px var(--shadow-sway) 2px var(--header-shadow-color);
+        text-shadow: 5px var(--header-sway) 4px var(--header-shadow-color),
+                     5px var(--header-sway) 2px var(--header-shadow-color);
     }
 
 
@@ -449,7 +441,7 @@ p {
 
         border-radius: 3px;
 
-        box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+        box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .main-page-inner {
@@ -464,7 +456,7 @@ p {
         padding: 50px;
         padding-top: 0;
 
-        box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
+        box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .content-inner, .content-outer {
@@ -479,24 +471,5 @@ p {
         width: 90%;
         box-shadow: none;
     }
-
-}
-
-/* big desktop */
-@media only screen and (min-width: 1401px) and (max-width: 1919px) {
-
-    h1 {
-        color:grey;
-    }
-
-}
-
-/* massive desktop */
-@media only screen and (min-width: 1920px) {
-
-    h1 {
-        color:pink;
-    }
-
 
 }
