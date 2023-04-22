@@ -17,7 +17,7 @@
 
     --header-height: 70px;
     
-    --dropdown-box-width: 100%;
+    --dropdown-box-width: 54px;
     --dropdown-buffer-width: 70px;
 
 
@@ -100,6 +100,7 @@ body {
     height: var(--header-height);
 
     z-index: 10;
+    pointer-events: none;
 }
 
 .animated-cover {
@@ -124,6 +125,7 @@ body {
     height: var(--header-height);
 
     z-index: 15;
+    pointer-events: none;
 }
 
 .animated-box {
@@ -143,32 +145,24 @@ body {
     position: fixed;
     display: flex;
     height: var(--header-height);
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
 
     z-index: 20;
 
-    visibility: hidden;
+    visibility: visible;
 }
 
 .logo {
     margin: 0rem 0rem 0rem 1.3rem;
 
-    width: 100%;
+    width: auto;
 
     font-family: "sloth-extrabold";
     font-size: 40px;
 
     text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color);
-}
-
-.main-dropdown {
-    margin-right: 50px;
-    width: 41.5px;
-    cursor: pointer;
-    border: none;
-    background: none;
 }
 
 .dropdown-container {
@@ -181,6 +175,16 @@ body {
     align-items: center;
 
     z-index: 25;
+    pointer-events: none;
+}
+
+.main-dropdown {
+    margin-right: 50px;
+    width: 41.5px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    pointer-events: all;
 }
 
 .drop-bar-1, .drop-bar-2, .drop-bar-3 {
@@ -220,10 +224,11 @@ body {
     height: auto;
     width: 100%;
 
-    margin-bottom: 70px;
+    margin-bottom:150px;
     background: var(--main-body-color);
 
-    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+    box-shadow: 2px 6px 10px var(--main-shadow-color),
+                2px -1px 10px var(--main-shadow-color);
 }
 
 .content-outer:last-of-type {
@@ -236,13 +241,12 @@ body {
     justify-content: center;
     height: auto;
     width: 100%;
-    border-radius: 3px;
 
     margin-top: 12px;
     margin-bottom: 12px;
-
     box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
 
+    
     background: var(--main-body-color);
 }
 
@@ -266,7 +270,7 @@ body {
 
     align-items: center;
     justify-content: center;
-    height: 90px;
+    height: 130px;
     width: 100%;
 
 
@@ -327,12 +331,47 @@ body {
         color:brown;
     }
 
-    .main-header, .background-layer, .menu-container,
-    .animated-cover-layer, .animated-box-layer, 
-    .logo-container, .dropdown-container {
-        height: 80px;
+    .animated-cover-layer, .animated-box-layer, .dropdown-container {
+        visibility: hidden;
     }
 
+    .logo-container {
+        align-items: left;
+        width: 30%;
+    }
+
+    .logo {
+        margin: 0rem 0rem 0rem 2.6rem;
+        font-size: 50px;
+    }
+
+    .logo:hover {
+        text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color),
+                     5px var(--shadow-sway) 2px var(--header-shadow-color);
+    }
+
+    .menu-container {
+        justify-content: flex-end;
+    }
+
+    .menu {
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .menu > li {
+        font-size: 18px;
+    }
+
+    .menu > li:hover {
+        text-shadow: 5px var(--shadow-sway) 5px var(--header-shadow-color),
+                     5px var(--shadow-sway) 2px var(--header-shadow-color);
+    }
+
+
+    .menu >li:last-of-type {
+        margin-right: 10%;
+    }
 
     .animated-box {
         margin-left: 17px;
@@ -365,6 +404,7 @@ body {
         background: none;
         margin: 0;
         box-shadow: none;
+        border-radius: 3px;
 
     }
 
