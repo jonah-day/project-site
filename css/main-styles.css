@@ -4,6 +4,33 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: sloth-extrabold;
+    src: url(fonts/sloth/sloth_extrabold-webfont.woff2);
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: sloth-light;
+    src: url(fonts/sloth/sloth-light-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-regular;
+    src: url(fonts/sloth/sloth-regular-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-semibold;
+    src: url(fonts/sloth/sloth-semibold-webfont.woff2);
+}
+
+@font-face {
+    font-family: sloth-bold;
+    src: url(fonts/sloth/sloth_bold-webfont.woff2);
+}
+
+
 :root {
 
     --main-body-color: hsl(0, 0%, 94%);
@@ -35,9 +62,17 @@ body {
 
     background: url(../images/leaves-background-light.jpg);
 
-    font-family: "Helvatica", "Arial", sans-serif;
+    font-family: "sloth-regular", "Helvatica", "Arial", sans-serif;
     font-size: 16px;
-    line-height: 1.3;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: "sloth-bold", "Helvatica", "Arial", sans-serif;
+}
+
+p {
+    text-indent: 5ch;
 }
 
 .main-header {
@@ -49,6 +84,7 @@ body {
 .main-header a:link {
     text-decoration: none;
     list-style: none;
+    color: var(--header-text-color);
 }
 
 .main-header a:visited {
@@ -80,7 +116,6 @@ body {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    margin-top: 1%;
     margin-left: 5.5%;
 }
 
@@ -108,7 +143,7 @@ body {
     width: 100%;
     height: 100%;
     margin-right: var(--dropdown-box-width);
-    transition: margin-right 0.3s cubic-bezier(0.44, 0.21, 0, 1.1);
+    transition: margin-right 0.4s cubic-bezier(0.44, 0.21, 0, 1.1);
 
     background: var(--main-body-color);
 }
@@ -132,7 +167,7 @@ body {
 
 .animated-box {
     width: var(--dropdown-box-width);
-    transition: width 0.3s cubic-bezier(0.44, 0.21, 0, 1);
+    transition: width 0.4s cubic-bezier(0.44, 0.21, 0, 1);
     height: 46px;
     margin-right: 45px;
     margin-left: 12px;
@@ -154,7 +189,9 @@ body {
 
     z-index: 20;
 
-    visibility: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .2s cubic-bezier(.97, .01, .83, .67);
 }
 
 .logo {
@@ -210,6 +247,7 @@ body {
 
     margin-top: 140px;
     margin-bottom: 70px;
+
 }
 
 .main-page-content {
@@ -226,7 +264,7 @@ body {
     justify-content: center;
     height: auto;
     width: 100%;
-
+    
     margin-bottom:150px;
     background: var(--main-body-color);
 
@@ -245,6 +283,7 @@ body {
     height: auto;
     width: 100%;
 
+    border-radius: 3px;
     margin-top: 12px;
     margin-bottom: 12px;
     box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
@@ -261,6 +300,14 @@ body {
     height: auto;
     width: 100%;
     padding: 30px;
+
+    border-radius: 3px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
+
+    
+    background: var(--main-body-color);
 
 }
 
@@ -282,57 +329,73 @@ body {
 }
 
 
-/* small mobile */
-@media only screen and (max-width: 360px) {
-
-    h1 {
-        color:blue;
-    }
-
-}
 
 /* mobile */
-@media only screen and (min-width: 361px) and (max-width: 400px) {
+@media only screen and (max-width: 640px) {
 
     h1 {
-        color:brown;
+        color:aqua;
     }
 
 }
 
-/* large mobile */
-@media only screen and (min-width: 401px) and (max-width: 640px) {
+/* tablet */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
 
     h1 {
-        color:orange;
+        color: purple;
     }
 
-}
 
-/* small tablet */
-@media only screen and (min-width: 641px) and (max-width: 768px) {
 
-    h1 {
-        color:red;
+    .main-page {
+        width: 80%;
+        background: var(--main-body-color);
+
+        border-radius: 3px;
+
+        box-shadow: 2px var(--main-shadow) 10px var(--main-shadow-color);
     }
 
-}
+    .main-page-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-/* tablet/desktop */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+        border-radius: 3px;
+        background: var(--main-body-color);
 
-    h1 {
-        color:maroon;
+        margin: 17px;
+        padding: 50px;
+        padding-top: 0px;
+
+        box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
     }
+
+    .content-inner, .content-outer {
+        background: none;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 3px;
+
+    }
+
+    .content {
+        width: 90%;
+        box-shadow: none;
+    }
+
 
 }
 
 /* desktop */
-@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+@media only screen and (min-width: 1025px) {
 
     h1 {
-        color:brown;
+        color: darkred;
     }
+
+
 
     .animated-cover-layer, .animated-box-layer, .dropdown-container {
         visibility: hidden;
@@ -340,7 +403,7 @@ body {
 
     .logo-container {
         align-items: left;
-        width: 30%;
+        width: 35%;
     }
 
     .logo {
@@ -381,7 +444,7 @@ body {
     }
 
     .main-page {
-        width: 60%;
+        width: 70%;
         background: var(--main-body-color);
 
         border-radius: 3px;
@@ -399,6 +462,7 @@ body {
 
         margin: 17px;
         padding: 50px;
+        padding-top: 0;
 
         box-shadow: inset 2px var(--main-shadow) 10px var(--main-shadow-color);
     }
@@ -413,8 +477,8 @@ body {
 
     .content {
         width: 90%;
+        box-shadow: none;
     }
-
 
 }
 
@@ -435,33 +499,4 @@ body {
     }
 
 
-}
-
-
-
-
-
-@font-face {
-    font-family: sloth-light;
-    src: url(fonts/sloth/sloth-light-webfont.woff2);
-}
-
-@font-face {
-    font-family: sloth-regular;
-    src: url(fonts/sloth/sloth-regular-webfont.woff2);
-}
-
-@font-face {
-    font-family: sloth-semibold;
-    src: url(fonts/sloth/sloth-semibold-webfont.woff2);
-}
-
-@font-face {
-    font-family: sloth-bold;
-    src: url(fonts/sloth/sloth_bold-webfont.woff2);
-}
-
-@font-face {
-    font-family: sloth-extrabold;
-    src: url(fonts/sloth/sloth_extrabold-webfont.woff2);
 }
