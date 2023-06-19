@@ -49,7 +49,7 @@
     --dropdown-buffer-width: 70px;
 
 
-    --header-sway: 9px;
+    --header-sway: 7px;
     --main-sway: 4px;
 
     font-size: 16px;
@@ -67,8 +67,9 @@ body {
     line-height: 1.5;
 }
 
+
 h1 {
-    font-family: "sloth-bold", "Helvatica", "Arial", sans-serif;
+    font-family: "sloth-semibold", "Helvatica", "Arial", sans-serif;
 }
 
 p {
@@ -325,20 +326,10 @@ p {
 /* mobile */
 @media only screen and (max-width: 640px) {
 
-    h1 {
-        color:aqua;
-    }
-
 }
 
 /* tablet */
 @media only screen and (min-width: 641px) and (max-width: 1024px) {
-
-    h1 {
-        color: purple;
-    }
-
-
 
     .main-page {
         width: 80%;
@@ -382,12 +373,6 @@ p {
 
 /* desktop */
 @media only screen and (min-width: 1025px) {
-
-    h1 {
-        color: darkred;
-    }
-
-
 
     .animated-cover-layer, .animated-box-layer, .dropdown-container {
         visibility: hidden;
@@ -468,7 +453,7 @@ p {
     }
 
     .content {
-        width: 90%;
+        width: 80%;
         box-shadow: none;
     }
 
