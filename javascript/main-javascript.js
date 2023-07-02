@@ -57,11 +57,17 @@ window.addEventListener("scroll", shadowScroll);
 
 //Parallax Effect
 
-// function backgroundImage() {
+ function backgroundImage() {
 //     let background = document.querySelector(".background-image");
 //     let scrollValue = window.scrollY;
 
-//     background.style = scrollValue * .5 + "px";
-// }
 
-// window.addEventListener("scroll", backgroundImage);
+
+
+
+
+
+//     background.style = scrollValue * .5 + "px";
+ }
+
+window.addEventListener("scroll", backgroundImage);
