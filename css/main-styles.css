@@ -98,7 +98,8 @@ p {
     width: 100%;
     height: var(--header-height);
     background: var(--main-body-color);
-    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
+    box-shadow: 0 -2px 0 var(--main-body-color),
+                2px var(--main-sway) 10px var(--main-shadow-color);
 }
 
 .menu-container {
@@ -142,7 +143,7 @@ p {
 
 .animated-cover {
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin-right: var(--dropdown-box-width);
     transition: margin-right 0.4s cubic-bezier(0.44, 0.21, 0, 1.1);
 
@@ -189,7 +190,7 @@ p {
     width: 100%;
 
     z-index: 20;
-
+    
     visibility: visible;
     opacity: 1;
     transition: opacity .2s cubic-bezier(.97, .01, .83, .67);
@@ -234,7 +235,8 @@ p {
     margin: 4px;
     background: var(--header-text-color);
 
-    box-shadow: 5px var(--header-sway) 4px var(--header-shadow-color);
+    /* box-shadow: 5px var(--header-sway) 4px var(--header-shadow-color);
+    FOR THE PRACTICE SHADOW*/
 
 }
 
