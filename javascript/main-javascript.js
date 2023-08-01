@@ -23,7 +23,11 @@ menuButton.addEventListener("click", clickDropMenu);
 
 
 
-//Scroll shadow effect:
+
+
+
+
+//Scroll shadow effect (for mobile and tablet):
 
 let headerMax = 7;
 let headerMin = -6;
@@ -42,7 +46,6 @@ function shadowScroll(){
 
     mainSway = mainMax - (totalMovement(mainMax, mainMin) * scrollRatio);
 
-
     document.documentElement.style.setProperty("--header-sway", `${headerSway}px`);
     document.documentElement.style.setProperty("--main-sway", `${mainSway}px`);
     console.log("HS: " + headerSway + "MS: " + mainSway);
@@ -53,21 +56,3 @@ function totalMovement(max, min) {
 }
 
 window.addEventListener("scroll", shadowScroll);
-
-
-//Parallax Effect
-
- function backgroundImage() {
-//     let background = document.querySelector(".background-image");
-//     let scrollValue = window.scrollY;
-
-
-
-
-
-
-
-//     background.style = scrollValue * .5 + "px";
- }
-
-window.addEventListener("scroll", backgroundImage);
