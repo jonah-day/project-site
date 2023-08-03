@@ -72,8 +72,16 @@ function runShadows() {
     //Runs during compilation and changes the shadows efficiently
 }
 
-function changeAllZ() {
+//  RECURSIVELY CHANGES ALL Z INDEXES IN CLONE
+function changeAllZ(clone, lowerZ) {
     
+    clone.style.zIndex = lowerZ;
+
+    let children = clone.children;
+
+    for (let i = 0; i < children.length; i++) {
+        changeAllZ(children[i], lowerZ);
+    }
 }
 
 function findSubType(clone) {
@@ -107,7 +115,7 @@ function findSubType(clone) {
 
     }
 
-    //  THROW ERROR IMPLEMENTATION
+    //  THROW ERROR IMPLEMENTATION?
     // if (filter.size > 1) {
     //     alert('throw error');
     // }
@@ -115,11 +123,9 @@ function findSubType(clone) {
     let subType = null;
     
     filter.forEach(value => subType = value);
-    
+
     return subType;
 }
-
-
 
 let button = document.getElementById("theButton");
 button.addEventListener("click", buttonHandler);
@@ -132,6 +138,8 @@ function buttonHandler() {
     applyShadow(element, type);
 }
 
+// MAIN FUNCTION///////////////////////////////////////////////////////////
+
 function applyShadow(element, type){
 
     //CLONING
@@ -140,30 +148,39 @@ function applyShadow(element, type){
 
     let clone = contElem.cloneNode(true);
 
-    clone.style.zIndex = window.getComputedStyle(contElem).zIndex -1;
+    //DEEP CHANGE OF Z INDEX
 
-    //NEXT NEED TO CHANGE ALL Z INDEXES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`
+    let matchZ = window.getComputedStyle(contElem).zIndex;
+    let lowerZ = matchZ - 1;
 
-    contElem.insertAdjacentElement('afterend', clone);
+    contElem.parentElement.appendChild(clone);
 
-    //FINDING RELEVANT CHILDREN
+    changeAllZ(clone, lowerZ);
+
+
+    //FINDING RELEVANT CHILDREN TO CAST SHADOWS
 
     let subType = findSubType(clone);
 
     let subElems = clone.querySelectorAll('.' + `${subType}`);
 
+    // let wow = document.documentElement.querySelector('.logo');
+    // wow.style.fontSize = '300px';
 
     switch(subType) {
         case 'practice-box':
-
             let horiz = headerMob.horizMax;
             let vert = headerMob.vertMax;
             let blur = headerMob.blur;
             let color = headerMob.color;
-            
+            let hidden = headerMob.hidden;
+    
             for (let each of subElems) {
-                each.style.opacity = '0';
-                each.style.boxShadow = `${horiz} ${vert} ${blur} ${color}`;
+                each.style.background = hidden;
+                each.style.boxShadow = `${horiz}px ${vert}px ${blur}px ${color}`;
+                each.style.boxShadow = '5px var(--header-sway) 4px var(--header-shadow-color)'
+
+                //LEFT OFF HERE
             }
             break;
     }
@@ -187,7 +204,8 @@ let headerMob = {
     vertMax: 7,
     verMin: -6,
     blur: 4,
-    color: 'hsl(0, 0%, 41%)',
+    color: 'var(--header-shadow-color)',
+    hidden: 'var(--transparent)',
 
 };
 

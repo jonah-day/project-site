@@ -60,7 +60,8 @@ body {
     align-items: center;
     flex-direction: column;
 
-    background: url(../images/leaves-background-light.jpg);
+    background: url(../images/paint1.jpg);
+     /* background: url(../images/leaves-background-light.jpg); */ 
 
     font-family: "sloth-regular", "Helvatica", "Arial", sans-serif;
     font-size: 16px;
@@ -125,7 +126,9 @@ p {
     list-style: none;
     font-family: "sloth-extrabold";
     font-size: 15px;
-    text-shadow: 5px var(--header-sway) 4.5px var(--header-shadow-color);
+    text-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                 -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                 5px var(--header-sway) 4.5px var(--header-shadow-color);
 
 }
 
@@ -176,7 +179,9 @@ p {
     border-radius: 3px;
     
     background: var(--transparent);
-    box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color),
+    box-shadow: inset 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                inset -1px -.7px 2px hsla(196, 100%, 50%, 0.4),
+                inset 2px var(--main-sway) 10px var(--main-shadow-color),
                 0 0 0 10px var(--main-body-color);
                 
 }
@@ -204,7 +209,10 @@ p {
     font-family: "sloth-extrabold";
     font-size: 40px;
 
-    text-shadow: 5px var(--header-sway) 4.5px var(--header-shadow-color);
+    text-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                 -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                 5px var(--header-sway) 4.5px var(--header-shadow-color);
+                 
 }
 
 .dropdown-container {
@@ -235,7 +243,9 @@ p {
     margin: 4px;
     background: var(--header-text-color);
 
-    /* box-shadow: 5px var(--header-sway) 4px var(--header-shadow-color);
+    /* box-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                   -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                    5px var(--header-sway) 4px var(--header-shadow-color);
     FOR THE PRACTICE SHADOW*/
 
 }
