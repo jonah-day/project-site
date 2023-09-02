@@ -42,9 +42,9 @@ function shadowScroll(){
     
     let scrollRatio = currentTop / (pageHeight - viewHeight);
     
-    headerSway = headerMax - (totalMovement(headerMax, headerMin) * scrollRatio);
+    let headerSway = headerMax - (totalMovement(headerMax, headerMin) * scrollRatio);
 
-    mainSway = mainMax - (totalMovement(mainMax, mainMin) * scrollRatio);
+    let mainSway = mainMax - (totalMovement(mainMax, mainMin) * scrollRatio);
 
     document.documentElement.style.setProperty("--header-sway", `${headerSway}px`);
     document.documentElement.style.setProperty("--main-sway", `${mainSway}px`);

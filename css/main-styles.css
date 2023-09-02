@@ -60,7 +60,8 @@ body {
     align-items: center;
     flex-direction: column;
 
-    background: url(../images/paint1.jpg);
+    background: rgb(229, 229, 229);
+    /*url(../images/concrete6.jpg);
      /* background: url(../images/leaves-background-light.jpg); */ 
 
     font-family: "sloth-regular", "Helvatica", "Arial", sans-serif;
@@ -99,7 +100,9 @@ p {
     width: 100%;
     height: var(--header-height);
     background: var(--main-body-color);
-    box-shadow: 0 -2px 0 var(--main-body-color),
+    box-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                0 -2px 0 var(--main-body-color),
                 2px var(--main-sway) 10px var(--main-shadow-color);
 }
 
@@ -243,10 +246,8 @@ p {
     margin: 4px;
     background: var(--header-text-color);
 
-    /* box-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
-                   -1px -1px 2px hsla(196, 100%, 50%, 0.4),
-                    5px var(--header-sway) 4px var(--header-shadow-color);
-    FOR THE PRACTICE SHADOW*/
+    box-shadow: -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                5px var(--header-sway) 4px var(--header-shadow-color);
 
 }
 
@@ -307,7 +308,9 @@ p {
     border-radius: 3px;
     margin-top: 18px;
     margin-bottom: 18px;
-    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color),
+    box-shadow: 1px 2.5px 2px hsla(0, 100%, 50%, 0.23),
+                -1px -2px 2px hsla(196, 100%, 50%, 0.4),
+                2px var(--main-sway) 10px var(--main-shadow-color),
                 2px 2px 5px var(--main-shadow-color),
                 2px -2px 5px var(--main-shadow-color);
 
@@ -330,7 +333,9 @@ p {
 
 
     background: var(--main-body-color);
-    box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
+    box-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                -1px -1.5px 2px hsla(196, 100%, 50%, 0.4),
+                2px var(--main-sway) 10px var(--main-shadow-color);
 }
 
 
@@ -349,7 +354,9 @@ p {
 
         border-radius: 3px;
 
-        box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
+        box-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                    -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                    2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .main-page-inner {
@@ -364,7 +371,9 @@ p {
         padding: 50px;
         padding-top: 0px;
 
-        box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color);
+        box-shadow: inset 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                    inset -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                    inset 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .content-inner, .content-outer {
@@ -401,7 +410,9 @@ p {
     }
 
     .logo:hover {
-        text-shadow: 5px var(--header-sway) 4px var(--header-shadow-color),
+        text-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                    -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                     5px var(--header-sway) 4px var(--header-shadow-color),
                      5px var(--header-sway) 2px var(--header-shadow-color);
     }
 
@@ -419,7 +430,9 @@ p {
     }
 
     .menu > li:hover {
-        text-shadow: 5px var(--header-sway) 4px var(--header-shadow-color),
+        text-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                     -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                     5px var(--header-sway) 4px var(--header-shadow-color),
                      5px var(--header-sway) 2px var(--header-shadow-color);
     }
 
@@ -438,7 +451,9 @@ p {
 
         border-radius: 3px;
 
-        box-shadow: 2px var(--main-sway) 10px var(--main-shadow-color);
+        box-shadow: 2px 1px 2px hsla(0, 100%, 50%, 0.23),
+                    -1px -1px 2px hsla(196, 100%, 50%, 0.4),
+                    2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .main-page-inner {
@@ -453,7 +468,9 @@ p {
         padding: 50px;
         padding-top: 0;
 
-        box-shadow: inset 2px var(--main-sway) 10px var(--main-shadow-color);
+        box-shadow: inset 1.5px 1.5px 2px hsla(0, 100%, 50%, 0.23),
+                    inset -.5px -2.5px 2px hsla(196, 100%, 50%, 0.4),
+                    inset 2px var(--main-sway) 10px var(--main-shadow-color);
     }
 
     .content-inner, .content-outer {
