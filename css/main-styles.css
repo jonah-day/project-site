@@ -71,10 +71,13 @@ body {
 
 h1 {
     font-family: "sloth-semibold", "Helvatica", "Arial", sans-serif;
+    text-shadow: 1px 1px 2px hsla(0, 100%, 50%, 0.23),
+                 -1px -1px 2px hsla(196, 100%, 50%, 0.4);
 }
 
 p {
     text-indent: 5ch;
+                 
 }
 
 .main-header {
